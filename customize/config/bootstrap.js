@@ -8,27 +8,19 @@
  * For more information on bootstrapping your app, check out:
  * https://sailsjs.com/config/bootstrap
  */
-
+var requireAll = require('require-all');
+var path = require('path');
 module.exports.bootstrap = async function(done) {
+  let repositories = requireAll({
+    dirname: path.dirname(__dirname) + '/api/repositories/',
+    filter      :  /(.+Repository)\.js$/,
+    excludeDirs :  /^\.(git|svn)$/,
+    recursive   : true
+  });
 
-  // By convention, this is a good place to set up fake data during development.
-  //
-  // For example:
-  // ```
-  // // Set up fake development data (or if we already have some, avast)
-  // if (await User.count() > 0) {
-  //   return done();
-  // }
-  //
-  // await User.createEach([
-  //   { emailAddress: 'ry@example.com', fullName: 'Ryan Dahl', },
-  //   { emailAddress: 'rachael@example.com', fullName: 'Rachael Shaw', },
-  //   // etc.
-  // ]);
-  // ```
-
-  // Don't forget to trigger `done()` when this bootstrap function's logic is finished.
-  // (otherwise your server will never lift, since it's waiting on the bootstrap)
+  _.forEach(repositories, function(content, name) {
+    global[name] = content
+  });
   return done();
 
 };

@@ -16,6 +16,7 @@ module.exports = {
             type: 'string',
             columnType: 'datetime',
             columnName: 'created_at',
+            autoCreatedAt: true
         },
         updatedAt: {
             type: 'string',

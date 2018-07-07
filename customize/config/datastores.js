@@ -50,7 +50,6 @@ module.exports.datastores = {
     ***************************************************************************/
     adapter: 'sails-mysql',
     url: `${dbConfig.driver}://${dbConfig.user}:${dbConfig.password}@${dbConfig.host}:${dbConfig.port}/${dbConfig.database}`,
-
   },
 
 
