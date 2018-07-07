@@ -1,0 +1,11 @@
+{
+  "development": {
+    "driver": "mysql",
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "database": "customize",
+    "multipleStatements": true
+  },
+  
+}
