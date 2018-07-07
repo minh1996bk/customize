@@ -1,1 +1,1 @@
-/* Replace with your SQL commands */
+ALTER TABLE `users` ADD COLUMN `age` int(11) NULL AFTER `name`;
