@@ -1,7 +1,12 @@
-<div ng-controller="login">
-    <div ng-if="isLogin">
-        
+<div ng-controller="login" class="container-fluid">
+    <div ng-if="isLogin" class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 form-group">
+            <label for="formLoginEmailInput">Email</label>
+            <input type="text" class="form-control" id="formLoginEmailInput" placeholder="Type your email">
+            <label for="forLoginPasswordInput">Password</label>
+            <input type="password" class="form-control" id="formLoginPasswordInput" placeholder="Type your password">
+        </div>
+        <div class="col-md-4"></div>
     </div>
-
-
 </div>

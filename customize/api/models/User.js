@@ -6,6 +6,12 @@ module.exports = {
             type: 'number',
             autoIncrement: true
         },
+        email: {
+            type: 'string',
+        },
+        password: {
+            type: 'string',
+        },
         name: {
             type: 'string',
         },
