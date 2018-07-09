@@ -14,7 +14,7 @@
  */
 
 module.exports.models = {
-
+  modelName: "",
 
   /***************************************************************************
   *                                                                          *
@@ -82,6 +82,59 @@ module.exports.models = {
     //--------------------------------------------------------------------------
   },
 
+  seed: async function(cb) {
+    var self = this;
+    var modelName = self.modelName;
+    var seedData = self.seedData;
+    if (!seedData) {
+      console.log("No seed data available in model " + self.modelName);
+      return cb();
+    }
+
+    try {
+      let count = await self.count();
+      if (count) {
+        console.log("No seed data needed", count);
+        return cb();
+      } else {
+        if (seedData instanceof Array) {
+          await self.seedArray(cb)
+        } else {
+          await self.seedObject(cb);
+        }
+      }
+    } catch (e) {
+      console.log(err);
+      cb();
+    }
+  },
+
+  seedObject: async function(cb) {
+    var self = this;
+    var modelName = self.modelName;
+    try {
+      console.log(modelName);
+      await User.create(self.seedData);
+      console.log("A seed record created in model " + modelName);
+      cb();
+    } catch (err) {
+      console.log(err);
+      cb();
+    }
+  },
+  seedArray: async function(cb) {
+    var self = this;
+    var modelName = self.modelName;
+    try {
+      console.log(modelName);
+      await User.createEach(self.seedData);
+      console.log("A seed record created in model " + modelName);
+      cb();
+    } catch (err) {
+      console.log(err);
+      cb();
+    }
+  },
 
   /******************************************************************************
   *                                                                             *

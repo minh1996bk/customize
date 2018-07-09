@@ -21,6 +21,8 @@ module.exports.bootstrap = async function(done) {
   _.forEach(repositories, function(content, name) {
     global[name] = content
   });
-  return done();
+  
+  await User.seed(done);
+  
 
 };
