@@ -1,4 +1,6 @@
-Realtime chat app
+aa
+
+<!-- Realtime chat app
 v1.0
 With it, you can talk with your friends in everywhere!
 Major function:
@@ -11,4 +13,4 @@ Tech stack:
 1. Nodejs
 2. mysql
 3. Sails framework
-4. html5, css, bootstrap, angularjs
+4. html5, css, bootstrap, angularjs -->
