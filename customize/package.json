@@ -13,6 +13,7 @@
     "db-migrate": "^0.11.1",
     "db-migrate-mysql": "^1.1.10",
     "grunt": "1.0.1",
+    "request": "^2.87.0",
     "require-all": "^3.0.0",
     "sails": "^1.0.0",
     "sails-hook-grunt": "^3.0.2",
@@ -21,11 +22,14 @@
     "sails-mysql": "^1.0.0"
   },
   "devDependencies": {
-    "@sailshq/eslint": "^4.19.3"
+    "@sailshq/eslint": "^4.19.3",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   },
   "scripts": {
     "dev": "nodemon --watch api/ --watch config/ app.js",
-    "update": "bash dev/update.sh"
+    "update": "bash dev/update.sh",
+    "test": "./node_modules/.bin/mocha"
   },
   "main": "app.js",
   "repository": {

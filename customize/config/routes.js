@@ -27,6 +27,16 @@ module.exports.routes = {
   '/': {
     view: 'pages/home'
   },
+  '/:age': function(req, res) {
+    let age = req.params.age;
+    console.log(age);
+    if (age <= 100 && age >= 10) {
+      return res.status(200).send("ok");
+    } else {
+      return res.status(400).send("not ok");
+    }
+
+  }
 
   /***************************************************************************
   *                                                                          *
